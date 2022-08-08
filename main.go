@@ -173,8 +173,8 @@ func init() {
 	// 默认昵称
 	adana := flag.String("n", "派蒙", "Set default nickname.")
 	prefix := flag.String("p", "/", "Set command prefix.")
-	runcfg := flag.String("c", "config-pm.json", "Run from config file.")
-	save := flag.String("s", "config-pm.json", "Save default config to file and exit.")
+	runcfg := flag.String("c", "config.json", "Run from config file.")
+	save := flag.String("s", "config.json", "Save default config to file and exit.")
 
 	flag.Parse()
 
