@@ -171,10 +171,10 @@ func init() {
 	// 直接写死 URL 时，请更改下面第二个参数
 	url := flag.String("u", "ws://127.0.0.1:6700", "Set Url of WSClient.")
 	// 默认昵称
-	adana := flag.String("n", "派蒙", "Set default nickname.")
+	adana := flag.String("n", "微星", "Set default nickname.")
 	prefix := flag.String("p", "/", "Set command prefix.")
-	runcfg := flag.String("c", "config.json", "Run from config file.")
-	save := flag.String("s", "config.json", "Save default config to file and exit.")
+	runcfg := flag.String("c", "config.yml", "Run from config file.")
+	save := flag.String("s", "config.yml", "Save default config to file and exit.")
 
 	flag.Parse()
 
@@ -253,7 +253,7 @@ func main() {
 		Handle(func(ctx *zero.Ctx) {
 			ctx.SendChain(message.Text(kanban.Banner, "\n可发送\"/服务列表\"查看 bot 功能"))
 		})
-	zero.OnFullMatch("查看zbp公告", zero.OnlyToMe, zero.AdminPermission).SetBlock(true).
+	zero.OnFullMatch("查看微星云公告", zero.OnlyToMe, zero.AdminPermission).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			ctx.SendChain(message.Text(kanban.Kanban()))
 		})
